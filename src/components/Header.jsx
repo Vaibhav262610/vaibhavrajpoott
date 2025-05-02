@@ -1,17 +1,57 @@
-import React from 'react'
-import ScrollVelocity from './ui/ScrollVelocity'
+'use client'
+
+import { motion, useScroll, useTransform } from 'framer-motion'
+import Image from 'next/image'
+import React, { useRef } from 'react'
 
 const Header = () => {
+  const containerRef = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ['start end', 'end start'],
+  })
+
+  const designerX = useTransform(scrollYProgress, [0, 1], ['35vw', '0vw'])
+  const developerX = useTransform(scrollYProgress, [0, 1], ['-20vw', '0vw'])
+
   return (
-    <>
-    <div className='text-[#D6D6D6] h-screen '>
-    <ScrollVelocity
-  texts={['React Bits', 'Scroll Down']} 
-  velocity={50} 
-  className="custom-scroll-text"
-/>
-  </div>
-    </>
+    <div ref={containerRef} className="BgImage h-[80vh] overflow-hidden text-[#cccccc] flex flex-col justify-center">
+      <motion.div
+        style={{ x: designerX }}
+        className="flex items-center justify-center heading relative"
+      >
+        <div className="relative flex items-center">
+          <div className="absolute select-none -left-[12vw]  w-[26rem]  z-10">
+            <Image
+              src="/heading-logo.svg"
+              width={700}
+              height={700}
+              alt="logo"
+              className=""
+              priority
+            />
+          </div>
+          <div>
+              <span className="z-20">D</span>
+          </div>
+        </div>
+
+        {/* Remaining Text */}
+        <span className=''>ESIGNER</span>
+      </motion.div>
+
+      {/* DEVELOPER Row */}
+      <motion.h1
+        style={{ x: developerX }}
+        className="heading text-[12vw] font-extrabold whitespace-nowrap text-center"
+      >
+        DEVELOPER
+      </motion.h1>
+      <div className='flex justify-center w-4/5 items-center '>
+        <h1 className='tracking-wider text-lg '>Bringing your ideas to Web</h1>
+        {/* <h1 className='tracking-wider '>BringingBringing your ideas to Web</h1> */}
+      </div>
+    </div>
   )
 }
 
