@@ -48,7 +48,7 @@ const Header = () => {
         DEVELOPER
       </motion.h1>
       <div className='flex justify-center w-4/5 items-center '>
-        <h1 className='tracking-wider text-lg '>Bringing your ideas to Web</h1>
+        <h1 className='tracking-wider text-xl '>Bringing your ideas to Web</h1>
         {/* <h1 className='tracking-wider '>BringingBringing your ideas to Web</h1> */}
       </div>
     </div>
