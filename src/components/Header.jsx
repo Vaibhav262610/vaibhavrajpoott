@@ -16,7 +16,7 @@ const Header = () => {
   const developerX = useTransform(scrollYProgress, [0, 1], ['-20vw', '0vw'])
 
   return (
-    <div ref={containerRef} className="BgImage h-[80vh] overflow-hidden text-[#cccccc] flex flex-col justify-center">
+    <div ref={containerRef} className="BgImage h-[80vh] overflow-hidden text-[#b8b8b8] flex flex-col justify-center">
       <motion.div
         style={{ x: designerX }}
         className="flex items-center justify-center heading relative"
