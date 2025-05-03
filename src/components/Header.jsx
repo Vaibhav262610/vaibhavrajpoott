@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import Image from 'next/image'
 import React, { useRef } from 'react'
+import Magnet from './ui/Magnet'
 
 const Header = () => {
   const containerRef = useRef(null)
@@ -47,8 +48,11 @@ const Header = () => {
       >
         DEVELOPER
       </motion.h1>
-      <div className='flex justify-center w-4/5 items-center '>
-        <h1 className='tracking-wider text-xl '>Bringing your ideas to Web</h1>
+      <div className='flex justify-center w-4/5 text-2xl items-center '>
+        {/* <h1 className='tracking-wider text-xl '>Bringing your ideas to Web</h1> */}
+        <Magnet padding={1000} disabled={false} magnetStrength={50}>
+          <p>Bringing your ideas to Web</p>
+      </Magnet>
         {/* <h1 className='tracking-wider '>BringingBringing your ideas to Web</h1> */}
       </div>
     </div>
