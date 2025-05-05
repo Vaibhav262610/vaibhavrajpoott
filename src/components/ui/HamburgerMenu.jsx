@@ -1,10 +1,12 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 export default function HamburgerMenu() {
+    const pathname = usePathname()
   const [isOpen, setIsOpen] = useState(false)
   const [isHovered, setIsHovered] = useState(false)
 
@@ -28,9 +30,10 @@ export default function HamburgerMenu() {
 
   // Menu items with staggered animation
   const menuItems = [
-    { name: "Work", href: "/work" },
-    { name: "About", href: "/about" },
-    { name: "Contact", href: "/contact" },
+    { name: "HOME", href: "/" },
+    { name: "ABOUT", href: "#about" },
+    { name: "WORK", href: "/work" },
+    { name: "CONTACT", href: "#contact" },
   ]
 
   // Animation variants
@@ -109,11 +112,9 @@ export default function HamburgerMenu() {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="fixed inset-0 z-40 flex flex-col items-center justify-center overflow-hidden"
-          >
+            className="fixed inset-0 z-40 flex flex-col items-center justify-center overflow-hidden">
             {/* Background overlay with top-to-bottom animation */}
-            <motion.div variants={overlayVariants} className="absolute inset-0 origin-top bg-[#D6D6D6] text-black" />
-
+            <motion.div variants={overlayVariants} className="absolute inset-0 origin-top bg-white text-black" />
             {/* Menu content */}
             <div className="relative z-10 flex h-full w-full flex-col items-center justify-center px-8">
               <nav className="flex flex-col items-center justify-center">
@@ -123,13 +124,12 @@ export default function HamburgerMenu() {
                     initial="hidden"
                     animate="visible"
                     exit="exit"
-                    className="overflow-hidden py-3"
-                  >
+                    className="overflow-hidden py-3">
                     <Link
-                      href={item.href}
-                      onClick={toggleMenu}
-                      className="relative block text-6xl font-light text-black transition-transform duration-300 hover:translate-x-2 md:text-7xl lg:text-8xl"
-                    >
+                         href={item.href}
+                         onClick={toggleMenu}
+                         className={`relative block text-7xl font-light transition-transform duration-300 hover:translate-x-2 md:text-8xl lg:text-9xl ${
+                         pathname === item.href ? "text-blue-600" : "text-black"}`}>
                       {/* Letter by letter animation for cooler effect */}
                       {item.name.split("").map((letter, index) => (
                         <motion.span
@@ -140,8 +140,7 @@ export default function HamburgerMenu() {
                           style={{
                             display: "inline-block",
                             transformOrigin: "bottom center",
-                          }}
-                        >
+                          }}>
                           {letter === " " ? "\u00A0" : letter}
                         </motion.span>
                       ))}

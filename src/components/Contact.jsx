@@ -3,7 +3,9 @@
 import Image from 'next/image'
 import React from 'react'
 import { motion} from 'framer-motion'
+import Link from 'next/link'
 const Contact = () => {
+  
   return (
     <div className='flex justify-center items-center p-4 w-full'>
     <div className='bg-[#D6D6D6]  flex justify-center items-center w-full text-black rounded-2xl'>
@@ -38,10 +40,10 @@ const Contact = () => {
       <div className='flex mt-12 py-4 w-full text-xl font-medium justify-between uppercase'>
         <div className='flex gap-20'>
             <div className='flex flex-col gap-4'>
-                <h1>bento</h1>
-                <h1>instagram</h1>
-                <h1>github</h1>
-                <h1>linkedin</h1>
+                <Link href='http://github.com/Vaibhav262610' target='_blank'>bento</Link>
+                <Link href='http://github.com/Vaibhav262610' target='_blank'>instagram</Link>
+                <Link href='http://github.com/Vaibhav262610' target='_blank'>github</Link>
+                <Link href='http://github.com/Vaibhav262610' target='_blank'>linkedin</Link>
             </div>
             <div className='flex flex-col gap-4 justify-end'>
                 <h1>resume</h1>
