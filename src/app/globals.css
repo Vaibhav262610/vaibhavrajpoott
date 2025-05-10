@@ -22,7 +22,24 @@ html{
   }
 }
 
+@font-face {
+  font-family: 'Recursive';
+  src: url('https://fonts.gstatic.com/s/recursive/v25/0nksC9ziJOYew_FByXYu6Q.woff2') format('woff2');
+  font-weight: 300 1000;
+  font-style: normal;
+  font-display: swap;
+}
+
+.jello-text {
+  font-family: 'Recursive', sans-serif;
+  font-size: 6rem;
+  --x: 0px;
+  --y: 0px;
+  transition: font-variation-settings 0.2s ease-in-out;
+}
+
 body {
+  /* cursor: url("data:image/svg+xml,%3Csvg width='64px' height='64px' xmlns='http://www.w3.org/2000/svg' ...") 32 32, pointer; */
   /* background: var(--background);
   color: var(--foreground); */
   font-family: 'Clash Grotesk', sans-serif;
@@ -39,6 +56,8 @@ body {
 
 .BgImage{
   background-image: url('/pattern.png');
+  /* background-color: aqua; */
+  /* opacity: 10%; */
 }
 
 
@@ -81,3 +100,5 @@ body {
   transform: rotate(0deg);
   animation: none;
 }
+
+

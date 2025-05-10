@@ -1,10 +1,30 @@
 import React from 'react'
+import FallingText from './ui/FaallingText'
+import { FaInstagram } from "react-icons/fa6";
 
 const MadeBy = () => {
+  // const instagram = <FaInstagram />
   return (
-    <div className='flex justify-center items-center px-4 w-full'>
-        <div className='bg-[#D6D6D6]  flex justify-center items-center w-full text-black rounded-2xl'>
-            <h1 className='text-xl font-medium py-4'>Made with 💖 by myself</h1>
+    <div className='flex justify-center items-center px-4 pb-8  w-full'>
+        <div className='bg-[#D6D6D6] h-24 flex justify-center items-center w-full text-black rounded-2xl'>
+          <FallingText
+            highlightWords={["Made", "myself"]}
+            trigger="hover"
+            backgroundColor="transparent"
+            gravity={0.56}
+            fontSize="1.5rem"
+            mouseConstraintStiffness={0.1}
+          > 
+            <FaInstagram className='text-2xl text-center' />
+            {"Made"}
+            {"with"}
+            {"💖"}
+            {"by"}
+            {"myself"}
+            <FaInstagram className='text-2xl text-center' />
+          </FallingText>
+
+        
         </div>
     </div>
   )

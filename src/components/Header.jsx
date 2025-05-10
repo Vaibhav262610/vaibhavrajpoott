@@ -16,7 +16,7 @@ const Header = () => {
   const developerX = useTransform(scrollYProgress, [0, 1], ['-20vw', '0vw'])
 
   return (
-    <div ref={containerRef} className="BgImage h-[80vh] overflow-hidden text-[#b8b8b8] flex flex-col justify-center">
+    <div ref={containerRef} className="BgImage h-[90vh] overflow-hidden text-[#b8b8b8] flex flex-col justify-center">
       <motion.div
         style={{ x: designerX }}
         className="flex items-center justify-center heading relative"
@@ -42,12 +42,12 @@ const Header = () => {
       </motion.div>
 
       {/* DEVELOPER Row */}
-      <motion.h1
-        style={{ x: developerX }}
-        className="heading text-[12vw] font-extrabold whitespace-nowrap text-center"
-      >
-        DEVELOPER
-      </motion.h1>
+        <motion.h1
+          style={{ x: developerX }}
+          className="heading  text-[12vw] font-extrabold whitespace-nowrap text-center"
+        >
+          DEVELOPER
+        </motion.h1>
       <div className='flex justify-center w-4/5 text-2xl items-center '>
         {/* <h1 className='tracking-wider text-xl '>Bringing your ideas to Web</h1> */}
         <Magnet padding={1000} disabled={false} magnetStrength={50}>
