@@ -40,19 +40,19 @@ const Contact = () => {
       <div className='flex mt-12 py-4 w-full text-xl font-medium justify-between uppercase'>
         <div className='flex gap-20'>
             <div className='flex flex-col gap-4'>
-                <Link href='http://bento.me/vaibhav2626' target='_blank'>bento</Link>
-                <Link href='http://instagram.com/_vaibhavrajpoot_' target='_blank'>instagram</Link>
-                <Link href='http://github.com/Vaibhav262610' target='_blank'>github</Link>
-                <Link href='https://www.linkedin.com/in/vaibhavrajpoot/' target='_blank'>linkedin</Link>
+                <Link className='links' href='http://bento.me/vaibhav2626' target='_blank'>bento</Link>
+                <Link className='links' href='http://instagram.com/_vaibhavrajpoot_' target='_blank'>instagram</Link>
+                <Link className='links' href='http://github.com/Vaibhav262610' target='_blank'>github</Link>
+                <Link className='links' href='https://www.linkedin.com/in/vaibhavrajpoot/' target='_blank'>linkedin</Link>
             </div>
             <div className='flex flex-col gap-4 justify-end'>
-                <Link target='_blank' href="https://drive.google.com/file/d/1OXTLwglyhQ9w3xPkU86cBIPRLRFJJjIO/view?usp=sharing">
+                <Link target='_blank' className='links' href="https://drive.google.com/file/d/1OXTLwglyhQ9w3xPkU86cBIPRLRFJJjIO/view?usp=sharing">
                   <h1>resume</h1>
                 </Link>
-                <Link target='_blank' href="https://wa.me/918299765660">
+                <Link target='_blank' className='links' href="https://wa.me/918299765660">
                   <h1>WHATSAPP</h1>
                 </Link>
-                <Link target='_blank' href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSHvpGRxNzgPzfFhMQDGQLRXvrtFMXjKdbtrBpvgTkWhLcSdFtNSVHhCRfndBKJFcjBDqsGW">
+                <Link target='_blank' className='links' href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSHvpGRxNzgPzfFhMQDGQLRXvrtFMXjKdbtrBpvgTkWhLcSdFtNSVHhCRfndBKJFcjBDqsGW">
                   <h1>vaibahvrajpoot2626@gmail.com</h1>
                 </Link>
             </div>
